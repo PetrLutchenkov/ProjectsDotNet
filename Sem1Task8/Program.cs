@@ -21,7 +21,7 @@ if (inputLine != null)
     }
     //Проверяем чётное ли введённое число
     if (inputNumber % 2 == 0)
-        outLine = outLine + inputNumber;
+        {outLine = outLine + inputNumber;}
 
     //Выводим данные в консоль
     Console.WriteLine(outLine);
