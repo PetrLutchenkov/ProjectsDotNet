@@ -19,6 +19,7 @@ if (inputLine != null)
         outLine = outLine + startNumber + ", ";
         startNumber = startNumber + 2;
     }
+
     //Проверяем чётное ли введённое число
     if (inputNumber % 2 == 0)
     { outLine = outLine + inputNumber; }
