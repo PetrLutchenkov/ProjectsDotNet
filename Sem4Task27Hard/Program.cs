@@ -27,7 +27,7 @@ int SumDigitString(int num)
     int res = 0;
     for (int i = 0; i < arr.Length; i++)
     {
-        res += arr[i];
+        res += arr[i] - 48;
     }
     return res;
 }
