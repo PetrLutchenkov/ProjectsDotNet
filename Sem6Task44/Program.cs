@@ -25,10 +25,10 @@ string FibNum(int num)
     int buf = 0;
     for (int i = 2; i < num; i++)
     {
-        outLine = outLine +" "+ (first + last).ToString;
+        outLine = outLine +" "+ (first + last).ToString();
         buf=last;
         last=first+last;
         first=buf;
     }
     return outLine;
-}
+}   
