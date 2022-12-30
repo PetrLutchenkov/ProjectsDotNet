@@ -11,7 +11,7 @@ int ReadData(string line)
 
 void Print2DArrayColor(int[,] matrix)
 {
-    ConsoleColor[] col = new ConsoleColor[]{ConsoleColor.Blue,ConsoleColor.Cyan,
+    ConsoleColor[] col = new ConsoleColor[]{ConsoleColor.Black,ConsoleColor.Blue,ConsoleColor.Cyan,
                                         ConsoleColor.DarkBlue,ConsoleColor.DarkCyan,ConsoleColor.DarkGray,
                                         ConsoleColor.DarkGreen,ConsoleColor.DarkMagenta,ConsoleColor.DarkRed,
                                         ConsoleColor.DarkYellow,ConsoleColor.Gray,ConsoleColor.Green,
@@ -21,7 +21,7 @@ void Print2DArrayColor(int[,] matrix)
     {
         for (int j = 0; j < matrix.GetLength(1); j++)
         {
-            Console.ForegroundColor = col[matrix[i, j] % 14];
+            Console.ForegroundColor = col[matrix[i, j] % 15];
             Console.Write(matrix[i, j] + "     ".Substring(matrix[i, j].ToString().Length));
             Console.ResetColor();
         }
@@ -61,13 +61,13 @@ int[,] Fill2DArray(int countRow, int countColumn, int topBorder, int downBorder)
             }
         }
     }
-    return (row, collumn);
+    return (row,collumn);
 }
 
 int[,] Converted2DArray(int[,] arr, int x, int y)
 {
     int[,] outArr = new int[arr.GetLength(0) - 1, arr.GetLength(1) - 1];
-    int k = 0; int m = 0;
+    int k=0; int m=0;
 
     for (int i = 0; i < arr.GetLength(0); i++)
     {
@@ -85,9 +85,10 @@ int[,] Converted2DArray(int[,] arr, int x, int y)
     return outArr;
 }
 
-int row = ReadData("Введите количество строк ");                        // Пользователь вводит количество строк
-int column = ReadData("Введите количество столбцов ");                  // Пользователь вводит количество столбцов
-int[,] arr2D =  (row, column, 0, 99);
+
+int row = ReadData("Введите количество строк ");                                 // Пользователь вводит количество строк
+int column = ReadData("Введите количество столбцов ");                           // Пользователь вводит количество столбцов
+int[,] arr2D = Fill2DArray(row, column, 0, 99);
 Print2DArrayColor(arr2D);
 Console.WriteLine();
 (int x, int y) minElem = SearchMinElementIn2DArray(arr2D);
